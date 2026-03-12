@@ -7,42 +7,9 @@ namespace App\Http\Controllers;
         {
             public function index()
             {
-                $post = new Post();
+                $posts = Post::all();
 
-                $post->title = "Laravel";
-                $post->description = "Nice Framework";
-
-                $post->save();
-
-                $PostsFromDB = Post::all();
-                $allposts = [
-                    [
-                        'id' => 1,
-                        'title' => 'PHP',
-                        'posted_by' => 'Ahmed',
-                        'created_at' => '2026-02-01'
-                    ],
-                    [
-                        'id' => 2,
-                        'title' => 'Javascript',
-                        'posted_by' => 'Mohamed',
-                        'created_at' => '2026-02-02'
-                    ],
-                    [
-                        'id' => 3,
-                        'title' => 'HTML',
-                        'posted_by' => 'Mahmoud',
-                        'created_at' => '2026-02-03'
-                    ],
-                    [
-                        'id' => 4,
-                        'title' => 'CSS',
-                        'posted_by' => 'Ali',
-                        'created_at' => '2026-02-04'
-                    ],
-                ];
-
-                return view('posts.index' , ['posts' => $allposts]);
+                return view('posts.index' , ['posts' => $posts]);
             }
 
 

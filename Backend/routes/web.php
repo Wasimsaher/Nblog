@@ -9,10 +9,6 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/api/posts', function () {
-//     return Post::all();
-// });
-
 
 Route::get('posts' , [PostController::class , 'index'])->name('posts.index');
 
